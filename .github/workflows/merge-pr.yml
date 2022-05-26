@@ -4,7 +4,7 @@ name: Merge Pull Request
 on:
   push:
     branches:
-      - main
+      - master
       - 'releases/**'
 
 jobs:
