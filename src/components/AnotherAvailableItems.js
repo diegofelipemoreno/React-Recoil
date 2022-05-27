@@ -6,7 +6,7 @@ import {cartState} from "../atoms";
 import {inventory} from '../model';
 import { dispatcherState } from "../atoms";
 
-const AvailableItems = () => {
+const AnotherAvailableItems = () => {
     const [cart] = useRecoilState(cartState);
     const dispatcher = useRecoilValue(dispatcherState);
 
@@ -23,7 +23,7 @@ const AvailableItems = () => {
         <pre>
             {JSON.stringify(cart, null, 2)}
         </pre>
-            <h2>Available Items</h2>
+            <h2>AnotherAvailable Items</h2>
             {Object.entries(inventory).map(([id, {name, price}]) => (
                 <li key={id}>
                     {name} @ ${price.toFixed(2)}
@@ -45,4 +45,4 @@ const AvailableItems = () => {
 
 };
 
-export default AvailableItems;
+export default AnotherAvailableItems;

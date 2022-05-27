@@ -1,14 +1,12 @@
+// Framework dependencies
 import React, { Suspense }  from 'react';
 import {RecoilRoot} from 'recoil';
 
 import './App.css';
 
-import AvailableItems from './components/AvailableItems';
-import CartItems from './components/CartItems';
-import Shipping from './components/Shipping';
-import Totals from './components/Totals';
+import Items from './components/Items';
+import AnotherAvailableItems from './components/AnotherAvailableItems';
 //import CartInfoDebug from './components/CartInfoDebug';
-
 
 const CartInfoDebug = React.lazy(() => {
   return new Promise(resolve => setTimeout(resolve, 1000)).then(
@@ -16,18 +14,15 @@ const CartInfoDebug = React.lazy(() => {
   );
 });
 
-
 function App() {
   return (
     <RecoilRoot>
-      <AvailableItems/>
-      <CartItems />
-      <Shipping />
-      <Totals />
+      <Items />
       <hr/>
       <Suspense fallback={<h2>Loading...</h2>}>
         <CartInfoDebug />
       </Suspense>
+      <AnotherAvailableItems/>
     </RecoilRoot>
   );
 }
